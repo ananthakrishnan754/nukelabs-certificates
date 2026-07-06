@@ -1,0 +1,5 @@
+{
+  "redirects": [
+    { "source": "/", "destination": "/verify.html", "permanent": false }
+  ]
+}
