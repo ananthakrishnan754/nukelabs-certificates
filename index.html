@@ -96,9 +96,9 @@ button:hover { background: #d66500; }
   <div class="footer">Nuke Labs &mdash; Turning Ideas into Reality</div>
 </div>
 <script>
-const records = {"NL-CERT-7B15-70C4-79A1": {"name": "Dhiya Binoy", "course": "5-Day Online Cybersecurity Course", "date": "July 2026"}, "NL-CERT-289B-1C73-143E": {"name": "ANN CELIN JOSE", "course": "5-Day Online Cybersecurity Course", "date": "July 2026"}, "NL-CERT-316F-B3CE-6ED0": {"name": "Dina K Shafar", "course": "5-Day Online Cybersecurity Course", "date": "July 2026"}, "NL-CERT-D414-B2A2-CAA0": {"name": "Joshua K Simon", "course": "5-Day Online Cybersecurity Course", "date": "July 2026"}, "NL-CERT-9F56-8BC3-EE4A": {"name": "Nimitha N K", "course": "5-Day Online Cybersecurity Course", "date": "July 2026"}, "NL-CERT-E259-60AA-4D1F": {"name": "Sachin Tony", "course": "5-Day Online Cybersecurity Course", "date": "July 2026"}, "NL-CERT-CB5D-E0FC-D8A7": {"name": "Ashly Thomas", "course": "5-Day Online Cybersecurity Course", "date": "July 2026"}};
-function verify() {
-  const input = document.getElementById('certInput').value.trim().toUpperCase();
+const records = {"NL-CERT-1C04-FB42-1A86": {"name": "Dhiya Binoy", "course": "5-Day Online Cybersecurity Course", "date": "July 2026"}, "NL-CERT-FFB5-62B4-6DB7": {"name": "ANN CELIN JOSE", "course": "5-Day Online Cybersecurity Course", "date": "July 2026"}, "NL-CERT-4FAC-A165-BBC1": {"name": "Dina K Shafar", "course": "5-Day Online Cybersecurity Course", "date": "July 2026"}, "NL-CERT-775C-2AAE-C52E": {"name": "Joshua K Simon", "course": "5-Day Online Cybersecurity Course", "date": "July 2026"}, "NL-CERT-962C-682B-1C42": {"name": "Nimitha N K", "course": "5-Day Online Cybersecurity Course", "date": "July 2026"}, "NL-CERT-1229-4A7F-E60B": {"name": "Sachin Tony", "course": "5-Day Online Cybersecurity Course", "date": "July 2026"}, "NL-CERT-7FEA-0CC6-83DB": {"name": "Ashly Thomas", "course": "5-Day Online Cybersecurity Course", "date": "July 2026"}};
+function verify(id) {
+  const input = id || document.getElementById('certInput').value.trim().toUpperCase();
   const result = document.getElementById('result');
   const checkmark = document.getElementById('checkmark');
   const crossmark = document.getElementById('crossmark');
@@ -120,6 +120,11 @@ function verify() {
     checkmark.style.display = 'none';
     crossmark.style.display = 'flex';
   }
+}
+const params = new URLSearchParams(window.location.search);
+if (params.has('id')) {
+  document.getElementById('certInput').value = params.get('id');
+  verify(params.get('id'));
 }
 </script>
 </body>
